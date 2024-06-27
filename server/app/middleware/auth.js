@@ -21,7 +21,7 @@ async function auth(request, response, next) {
   }
 
   try {
-    var tokenData = jwt.verify(token, process.env.APP_KEY);
+    const tokenData = jwt.verify(token, process.env.APP_KEY);
     if (!tokenData || !tokenData.id) {
       logUnauthorizedError(request, response, ERROR_MESSAGES.UN_AUTHORIZATION_TOKEN);
       return response.status(401).send({

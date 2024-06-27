@@ -6,8 +6,6 @@ type Children = {
 };
 
 export const RestrictedRoute = ({ children }: Children) => {
-  const auth = true; //UserLoggedIn();
-
   const user = getLoggedInUser();
-  return !auth ? children : <Navigate to="/admin/dashboard" />;
+  return !user ? children : <Navigate to="/admin/dashboard" />;
 };

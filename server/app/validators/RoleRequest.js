@@ -5,7 +5,6 @@ middleware = require('composable-middleware');
 const Role = require('../models/Role');
 const Logger = require("../../bootstrap/logger");
 const { ERROR_CODES, ERROR_TYPES, ERROR_MESSAGES} = require("../helpers/error-codes");
-const xssFilters = require('xss-filters');
 
 const validateOnStore = () => {
     return middleware()
@@ -57,14 +56,9 @@ const validate = () => {
                 user_id: request.user ? request.user.id : undefined,
                 request_id: request.requestId,
             });
-            const escapedErrors = {};
-            for (let field in validation.errors.errors) {
-                escapedErrors[field] = validation.errors.errors[field].map(xssFilters.inHTMLData);
-            }
             return response.status(400).send({
                 status: false,
-                message: "Uh ooh! Please check the errors",
-                errors: escapedErrors
+                message: "Invalid request Payload",
             });
         }
     

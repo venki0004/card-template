@@ -11,7 +11,6 @@ const {
 } = require("../helpers/error-codes");
 const NodeCache = require("memory-cache");
 const { decryptClientData } = require("../helpers/encryption");
-const xssFilters = require('xss-filters');
 
 const decryptPayload = async (payload, headers, properties) => {
   const serverPrivateKey = NodeCache.get("privateKey");
@@ -94,14 +93,9 @@ const validate = () => {
         user_id: request.user ? request.user.id : undefined,
         request_id: request.requestId,
       });
-      const escapedErrors = {};
-      for (let field in validation.errors.errors) {
-        escapedErrors[field] = validation.errors.errors[field].map(xssFilters.inHTMLData);
-      }
       return response.status(400).send({
         status: false,
         message: "Uh ooh! Please check the errors",
-        errors: escapedErrors
       });
     }
 

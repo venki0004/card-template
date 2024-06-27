@@ -42,7 +42,7 @@ class VCardController {
         );
         return response.send(html);
       }
-      var now = new Date();
+      const now = new Date();
       const expiresIn = now.setMinutes(now.getMinutes() + 10); // 10 minutes
 
       const url = generateSignedUrl(

@@ -53,6 +53,7 @@ module.exports = (app) => {
   app.use(express.static(path.join(__dirname, './build'),{ etag: false }))
 
   app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './build', 'index.html'),{ etag: false })
-  })
+    res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    res.sendFile(path.resolve(__dirname, './build', 'index.html'), { etag: false });
+  });  
 }
