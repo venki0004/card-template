@@ -1,0 +1,107 @@
+.pagination-container {
+    display: flex;
+    list-style-type: none;
+
+    .pagination-item {
+        padding: 0 12px;
+        height: 28px;
+        text-align: center;
+        margin: auto 4px;
+        color: #141c4c;
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.01071em;
+        border-radius: 23px;
+        line-height: 1.43;
+        font-size: 16px;
+        &.dots:hover {
+            background-color: transparent;
+            cursor: default;
+        }
+
+        &:hover {
+            background: #2463eb;
+            border-radius: 4px;
+            color: #ffff;
+            cursor: pointer;
+        }
+
+        &.selected {
+            background: #2463eb;
+            border-radius: 4px;
+            color: #ffff;
+        }
+
+        .arrow {
+            &::before {
+                position: relative;
+                content: '';
+                display: inline-block;
+                width: 0.4em;
+                height: 0.4em;
+                border-right: 0.12em solid #141c4c;
+                border-top: 0.12em solid #141c4c;
+            }
+
+            &.left {
+                transform: rotate(-135deg) translate(-50%);
+            }
+
+            &.right {
+                transform: rotate(45deg);
+            }
+        }
+
+        &.disabled {
+            pointer-events: none;
+
+            .arrow::before {
+                border-right: 0.12em solid rgb(213 207 207 / 43%);
+                border-top: 0.12em solid rgb(213 207 207 / 43%);
+            }
+
+            &:hover {
+                background-color: transparent;
+                cursor: default;
+            }
+        }
+    }
+    .arrow-icon {
+        &:hover {
+            height: 28px;
+            border-radius: 14px;
+            background: #2463eb;
+            color: #151929;
+        }
+        color: #151929;
+    }
+}
+.pagination-bar {
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination-goto {
+    &::before {
+        position: absolute;
+        content: '';
+        height: 25px;
+        width: 1px;
+        left: -11px;
+        background: #404050;
+    }
+    .pagination-input-sec {
+        &::after {
+            content: '';
+            background-image: url('../../assets/icons/Right2Light.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 10px;
+        }
+    }
+}

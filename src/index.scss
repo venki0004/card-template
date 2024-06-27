@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Onest Regular';
+  src: url('./assets/fonts/Onest-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest Medium';
+  src: url('./assets/fonts/Onest-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest Bold';
+  src: url('./assets/fonts/Onest-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Onest SemiBold';
+  src: url('./assets/fonts/Onest-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Onest Light';
+  src: url('./assets/fonts/Onest-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body{
+  @apply font-onestMedium;
+}
+
+.graidentText {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#4A7DFF] via-[#E488C5] to-[#FF7F57];
+}
+
+.subheading {
+  @apply text-[22px] font-bold font-onestSemiBold;
+}
+
+h1 {
+  @apply text-xl font-bold;
+}
+
+h2 {
+  @apply text-5xl;
+}
+
+h3 {
+  font-size: clamp(1rem, 0.7981rem + 0.8974vw, 1.875rem);
+}
+
+h4 {
+  @apply text-xl 3xl:text-2xl font-semibold;
+}
+
+.title2 {
+  @apply text-[14px];
+}
+
+.title3 {
+  font-size: clamp(0.75rem, 0.6635rem + 0.3846vw, 1.125rem);
+}
+
+.body1 {
+  font-size: clamp(0.875rem, 0.7308rem + 0.641vw, 1.5rem);
+}
+
+
+.filters,
+.custom-form-section {
+  .MuiOutlinedInput-root {
+    height: 48px !important;
+  }
+
+  .date-range-picker {
+    height: 48px !important;
+  }
+  .custom-phone-input {
+    height: 48px !important;
+  }
+}
+
+.file-upload-box {
+  @apply p-3;
+  border-radius: 0px;
+  display: block;
+  justify-items: center;
+  align-items: center;
+  border: 1px dashed #e7e8ed;
+}
+.file-upload-active {
+  border: 1px dashed #0c8ec7;
+}
+
+.file-upload-error {
+  border: 1px dashed #ef4949;
+}
+
+.cancel-btn {
+  border-radius: 8px;
+  border: 1px solid #ef4949;
+  font-size: 12px;
+  color: #ef4949;
+  padding: 8px 22px;
+}
+
+.upload-btn {
+  border-radius: 8px;
+  @apply border  text-sm;
+  padding: 8px 22px;
+}
+
+
+.clamptest{
+  font-size: clamp(1.25rem, 0.8462rem + 1.7949vw, 3rem);
+}
+
+.custom-date-picker {
+  .MuiInputBase-formControl {
+      border-radius: 10px !important;
+      color: #141c4c !important;
+  }
+
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-radius: 10px !important;
+  }
+
+  .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+      border-radius: 10px !important;
+  }
+
+  .MuiOutlinedInput-notchedOutline:hover {
+      border-radius: 10px !important;
+  }
+
+  .error-state {
+      .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+          border-color: #ef4949 !important;
+          border-radius: 10px !important;
+      }
+
+      .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
+          color: #ef4949 !important;
+          background-color: #404050;
+      }
+
+      .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+          border-color: #ef4949 !important;
+          border-radius: 10px !important;
+      }
+  }
+}
+
+.date-range-picker {
+  .custom-label {
+      color: #6a6a78;
+      position: relative;
+      top: 12px;
+  }
+
+  .toggle-label {
+      width: fit-content;
+      background-color: white;
+      transform: translateY(-22px);
+      font-size: 12px;
+  }
+}
+
+.react-datepicker-wrapper input {
+  border: none !important;
+  color: #141c4c;
+  background-color: transparent;
+  outline: none;
+}
+
+.filters , .custom-form-section{
+  .MuiOutlinedInput-root {
+      height: 48px !important;
+  }
+
+  .date-range-picker {
+      height: 48px !important;
+  }
+  .custom-phone-input{
+      height: 48px !important;
+  }
+}
+
+.date_range_filter {
+  .custom-select-input {
+      width: 200px;
+  }
+
+  .MuiOutlinedInput-root {
+      height: 48px !important;
+  }
+
+  .date-range-picker {
+      height: 48px !important;
+  }
+}
+
+
+.lazy-loading {
+  @apply  flex fixed inset-0 z-50 items-center justify-center bg-opacity-50;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.ag-paging-page-size {
+  display: none !important;
+}
